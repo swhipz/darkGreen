@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+
+.hero-container{
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.hero-left{
+  width: 60vw;
+  display:flex;
+  order: 0;
+} 
+.bg-img{
+  display: inherit;
+  width: 60vw;
+  order: 0; 
+  height: 100vh;
+  background: url('../../media/1589588740_519cf4281e.gif');
+  background-position: center;
+  background-size: 75%;
+  background-repeat: no-repeat;
+
+
+}
+.hero-right{
+  width: 40vw;
+  display: inherit;
+  order: 1;
+  flex-direction: column;  
+  justify-content: center;
+  
+  
+}
+.hero-cta{
+  font-family: 'Montserrat';
+  margin-top: 5rem;
+  align-items: center;
+  justify-content: center;
+  width: 14rem;
+  height: 4rem;
+  border-radius: 99px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  background-color: #000;
+  color: #43fc4c;
+  border: 5px solid linear-gradient(80deg, rgba(255,255,255,0.4514180672268907) 5%, rgba(202,202,202,1) 20%, rgba(142,142,142,1) 71%, rgb(222, 222, 222) 100%);
+  box-shadow: #37ff0080 1px 1px 25px 6px;
+  transition: .5s;
+}
+.hero-cta:hover{
+  transition: .5s ease;
+  background-color: #43fc4c;
+  color: #292929;
+  border: 3px solid #00ff91;
+  box-shadow: #37ff0080 1px 1px 50px 6px;
+  cursor: pointer;
+  text-shadow: 0px 0px 10px #053915;
+}
+
+
+.hero-title{
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 7rem;
+  padding-bottom: 1rem;
+  
+}
+
+.hero-text{
+  font-weight: 100;
+  font-size: 2rem;
+  color: #b6f985;
+
+}
+
+@media screen and (max-width: 789px){
+  .hero-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .bg-img{
+    width: 100vw;
+    height: 50vh;
+  }
+  .hero-left{
+    display:flex;
+    order: 1;
+    width: 100%;
+    height: 100vh;
+    
+  }
+  .hero-right{
+    display: flex;
+    order: 0;
+    width: 100%;
+    height: 50vh;
+    padding: 1rem;
+    max-width: 90vw;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-title{
+    font-size: 3rem;
+    white-space: none;
+    word-break: none;
+    font-weight: 400;
+    line-height: 4rem;
+    text-align: center;
+    
+  }
+  .hero-text{
+    font-weight: 100;
+    font-size: 1rem;
+    max-width: 50%;
+  }
+
+
+
+}

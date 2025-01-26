@@ -1,0 +1,14 @@
+.bridge-container{
+  height: 35vh;
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(42, 42, 42, 0.496) 20%, rgba(255,255,255,0) 60%);
+}
+.bridge-content{
+  display: flex;
+  justify-content: left;
+}
+.smoke{
+  height: 200px;
+  opacity: 13%;
+  width: 100%;
+}
