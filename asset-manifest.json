@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "./static/css/main.8e2709df.css",
+    "main.js": "./static/js/main.e48e0674.js",
+    "static/js/453.f39f71b3.chunk.js": "./static/js/453.f39f71b3.chunk.js",
+    "static/media/sport-smoke-301329_1080x675.png": "./static/media/sport-smoke-301329_1080x675.fb1072546d7ee49b7b33.png",
+    "static/media/1589588740_519cf4281e.gif": "./static/media/1589588740_519cf4281e.dd82fbf8e34a6576399e.gif",
+    "static/media/cart-add.svg": "./static/media/cart-add.ce1c130c7e3b55471562ee608c1ddad0.svg",
+    "static/media/rem-favourite.svg": "./static/media/rem-favourite.f958716bf59d650e0e5210f28c8939f8.svg",
+    "static/media/add-favourite.svg": "./static/media/add-favourite.10619cecb0b2ded105a59644d6f18533.svg",
+    "static/media/cart.svg": "./static/media/cart.52b3c1cb3e36be97f9fa2b2b07072c69.svg",
+    "static/media/checkout-icon.svg": "./static/media/checkout-icon.d1b67af09aa3e0554e2377474446187a.svg",
+    "index.html": "./index.html",
+    "main.8e2709df.css.map": "./static/css/main.8e2709df.css.map",
+    "main.e48e0674.js.map": "./static/js/main.e48e0674.js.map",
+    "453.f39f71b3.chunk.js.map": "./static/js/453.f39f71b3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8e2709df.css",
+    "static/js/main.e48e0674.js"
+  ]
+}
