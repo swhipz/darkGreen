@@ -1,52 +1,133 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import "./App.css";
-import Header from "./components/Header/Header";
-import Hero from "./components/Hero/Hero";
-import Bridge from "./components/Bridge/Bridge";
-import CardContainer from "./components/CardContainer/CardContainer";
-import CompanyCR from "./components/CompanyCR/CompanyCR";
-import Footer from "./components/Footer/Footer";
 import Landing from "./pages/Landing/Landing";
 import Watches from "./pages/products/Watches/Watches";
 import Checkout from "./pages/Checkout/Checkout";
-import { useState } from "react";
-import { useEffect } from "react";
-
-
-
+import Cart from "./pages/Cart/Cart";
+import OrderCompleted from "./pages/OrderCompleted/OrderCompleted";
+import { useState, useEffect } from "react";
 
 function App() {
-  
-  const [cart, setCart] = useState([]);
+  // Initialize cart state from sessionStorage or empty array
+  const [cartItems, setCartItems] = useState(() => {
+    const savedCart = sessionStorage.getItem("cartItems");
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
 
-useEffect(() => {
-      const savedCart = JSON.parse(localStorage.getItem('cart'));
-      if (savedCart) {
-        setCart(savedCart);
+  const [cartTotal, setCartTotal] = useState(() => {
+    const savedCart = sessionStorage.getItem("cartItems");
+    if (savedCart) {
+      const items = JSON.parse(savedCart);
+      return items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    }
+    return 0;
+  });
+
+  // Update sessionStorage whenever cart changes
+  useEffect(() => {
+    sessionStorage.setItem("cartItems", JSON.stringify(cartItems));
+    // Calculate total
+    const total = cartItems.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
+    setCartTotal(total);
+  }, [cartItems]);
+
+  const addToCart = (product) => {
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find((item) => item.id === product.id);
+      if (existingItem) {
+        // If item exists, increase quantity
+        return prevItems.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
       }
-    }, []);
+      // If item doesn't exist, add it with quantity 1
+      return [...prevItems, { ...product, quantity: 1 }];
+    });
+  };
 
-    useEffect(() => {
-      localStorage.setItem('cart', JSON.stringify(cart));
-}, [cart]);
+  const removeFromCart = (productId) => {
+    setCartItems((prevItems) =>
+      prevItems.filter((item) => item.id !== productId)
+    );
+  };
 
-const addToCart = (product) => {
+  const updateQuantity = (productId, newQuantity) => {
+    if (newQuantity < 1) return; // Prevent negative quantities
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === productId
+          ? { ...item, quantity: parseInt(newQuantity) }
+          : item
+      )
+    );
+  };
 
-  setCart((prevCart) => [...prevCart, product]);
-  
-
-
-}
-
-
+  // Add this function to clear cart
+  const clearCart = () => {
+    setCartItems([]);
+    sessionStorage.removeItem("cartItems");
+  };
 
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/Landing" element={<Landing />} />
-          <Route path="/watches" element={<Watches />} />
-          <Route path="/checkout" element={<Checkout />} />
+          {/* Add default route */}
+          <Route path="/" element={<Navigate to="/Landing" replace />} />
+
+          <Route
+            path="/Landing"
+            element={<Landing cartItems={cartItems} cartTotal={cartTotal} />}
+          />
+          <Route
+            path="/watches"
+            element={
+              <Watches
+                addToCart={addToCart}
+                cartItems={cartItems}
+                cartTotal={cartTotal}
+              />
+            }
+          />
+          <Route
+            path="/checkout"
+            element={
+              <Checkout
+                cartItems={cartItems}
+                cartTotal={cartTotal}
+                clearCart={clearCart}
+              />
+            }
+          />
+          <Route
+            path="/cart"
+            element={
+              <Cart
+                cartItems={cartItems}
+                cartTotal={cartTotal}
+                removeFromCart={removeFromCart}
+                updateQuantity={updateQuantity}
+              />
+            }
+          />
+          <Route
+            path="/order-success"
+            element={
+              <OrderCompleted cartItems={cartItems} cartTotal={cartTotal} />
+            }
+          />
+          {/* Catch all unknown routes */}
+          <Route path="*" element={<Navigate to="/Landing" replace />} />
         </Routes>
       </div>
     </Router>

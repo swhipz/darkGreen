@@ -1,21 +1,16 @@
 import './cards.css';
 import CardContainer from '../CardContainer';
-import CartAdd from '../../../media/cart-icons/cart-add.svg';
-import Favourites from '../../../media/favourite/add-favourite.svg';
-import Unfavourite from '../../../media/favourite/rem-favourite.svg';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faShop, faCartShopping, faBagShopping } from '@fortawesome/free-solid-svg-icons';
 
 const Card1 = () => {
   return (
     <>
     <div className="card-outline">'
-      
       <div className="card-top">
-        
-        <img className="card-img" src='https://www.robhayes.co/wp-content/uploads/2018/12/Gold_green.png' alt="card-img" />
-        <img src={Favourites} className="card-fav-icon" alt="fav-icon" />
+	  <img className="card-img"  src="https://www.robhayes.co/wp-content/uploads/2018/12/Gold_green.png" alt="watch"/>  
       </div>
-      
-      
       <div className="card-bottom">
         <div className="card-bottom-left">
           <div className="card-title"><p>Rob Hayes</p></div>
@@ -23,7 +18,9 @@ const Card1 = () => {
           <div className="card-price">$54 225</div>
         </div>
         <div className="card-bottom-right">
-          <div className="card-cart">Add to cart<img src={CartAdd} alt="cart-icon"/></div>
+        <Link to="/watches" style={{textDecoration:"none", color:"#f9f9f9"}}><div className="card-cart">Add to cart 
+		<FontAwesomeIcon className="card-cart-img" icon={faCartShopping}/>
+	  </div></Link>
         </div>
       </div>
     </div>

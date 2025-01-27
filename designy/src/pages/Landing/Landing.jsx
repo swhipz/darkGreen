@@ -5,17 +5,20 @@ import CardContainer from "./../../components/CardContainer/CardContainer";
 import CompanyCR from "./../../components/CompanyCR/CompanyCR";
 import Footer from "./../../components/Footer/Footer";
 
-const Landing = () => {
+
+const Landing = ({ cartItems, cartTotal }) => {
   return (
     <>
-      <Header />
+      <Header cartItems={cartItems} cartTotal={cartTotal} />
       <Hero />
       <Bridge />
       <CardContainer />
+      <Bridge />
       <CompanyCR />
       <Bridge />
       <Footer />
     </>
   );
 };
+
 export default Landing;

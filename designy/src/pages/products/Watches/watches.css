@@ -1,15 +1,16 @@
-.productsContainer{
+.productsContainer {
   display: flex;
   flex-direction: column;
+
 }
-.product-cards{
+
+.product-cards {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   padding-bottom: 10vh;
-
 }
-.products-contianer-title{
+.products-contianer-title {
   padding: 2.5rem;
   font-weight: 600;
   font-size: 2.5rem;
@@ -17,8 +18,99 @@
   top: 15vh;
 }
 
-@media screen and (max-width: 789px){
-  .product-cards{
-    flex-direction: column;
-  }
+.watches-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 2rem auto;
+  flex-direction: column;
+  padding: 0 1rem;
+  align-items: center;
+  justify-content: center;
+
 }
+
+.watches-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+@media screen and (max-width: 789px){
+  .watches-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .add-to-cart{
+    width: 50%;
+    height: 95px;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+
+}
+
+.watch-card {
+  border-bottom: 1px solid #4d4d4d78;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.watch-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.watch-card img {
+  width: 100%;
+  height: 250px;
+  object-fit:scale-down;
+}
+
+.watch-info {
+  padding: 1rem;
+}
+
+.watch-description {
+  color: #666;
+  margin: 0.5rem 0;
+}
+
+.watch-specs {
+  font-size: 0.9rem;
+  color: #444;
+  margin: 0.5rem 0;
+}
+
+.watch-price-cart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.add-to-cart {
+  background-color: #2929;
+  color: white;
+  border: none;
+  padding:1rem 1.25rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-to-cart:hover {
+  background-color: #43fc4c;
+  color: #fff;
+  box-shadow: #37ff0080 1px 1px 50px 6px;
+  transition: .2s;
+}
+

@@ -95,6 +95,8 @@
   font-size: 12px;
   cursor: pointer;
   transition: .2s;
+  text-align: center;
+  
 }
 .card-cart:hover{
   background-color: #43fc4c;
@@ -102,8 +104,9 @@
   box-shadow: #37ff0080 1px 1px 50px 6px;
   transition: .2s;
 }
-.card-cart img{
-  height: 66px;
+.card-cart-img{
+  height: 55px;
+  padding-top: .5rem;
 }
 
 @media screen and (max-width: 789px){

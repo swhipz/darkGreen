@@ -1,5 +1,5 @@
 import './hero.css';
-
+import { Link } from "react-router-dom";
   
 
 const Hero = () => {
@@ -14,7 +14,7 @@ const Hero = () => {
         <p className="hero-text">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic, modi?
         </p>
-        <button className="hero-cta">Browse now</button>
+        <Link to="/Watches"><button className="hero-cta">Browse now</button></Link>
       </div>
     </div>
     

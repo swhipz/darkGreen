@@ -1,0 +1,122 @@
+.order-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.thank-you-notice {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.thank-you-notice h2 {
+  color: #43fc4c;
+  font-size: 2rem;
+}
+
+.order-wrapper {
+  background-color: #292929;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.order-id-wrapper {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #4d4d4d78;
+}
+
+.receipt {
+  display: grid;
+  gap: 2rem;
+}
+
+.order-items {
+  margin: 1rem 0;
+}
+
+.order-item {
+  display: flex;
+  padding: 1rem;
+  border-bottom: 1px solid #4d4d4d78;
+  gap: 1rem;
+}
+
+.order-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: scale-down;
+}
+
+.item-details h4 {
+  margin: 0;
+  color: #43fc4c;
+}
+
+.order-totals {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #4d4d4d78;
+}
+
+.order-totals > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.total {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #43fc4c;
+}
+
+.shipping-details {
+  margin: 1rem 0;
+}
+
+.order-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.order-info li {
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.return-button {
+  text-align: center;
+}
+
+.return-button-style {
+  background-color: #2929;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.return-button-style:hover {
+  background-color: #43fc4c;
+  color: #fff;
+  box-shadow: #37ff0080 1px 1px 50px 6px;
+}
+
+@media screen and (max-width: 789px) {
+  .order-wrapper {
+    padding: 1rem;
+  }
+
+  .order-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
