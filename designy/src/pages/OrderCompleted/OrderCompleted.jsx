@@ -98,7 +98,7 @@ const OrderCompleted = ({ cartItems, cartTotal }) => {
             </div>
           </div>
         </div>
-        <div className="return-button">
+        <div className="page-return-button">
           <Link to="/Landing">
             <button className="return-button-style">Return to store</button>
           </Link>
