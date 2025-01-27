@@ -46,7 +46,7 @@ const Watches = ({ addToCart, cartItems, cartTotal }) => {
       </div>
       <Bridge />
       <div className="return-button">
-      <a href="#top"> <button className="return-button-style">Return to store</button></a>
+      <a href="#top"> <button className="return-button-style">Return to top</button></a>
         </div>
       <Footer />
     </>
